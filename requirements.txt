@@ -1,0 +1,7 @@
+yfinance
+pandas
+ta
+langchain-community
+GoogleNews
+finrobot 
+pyautogen==0.2.28
