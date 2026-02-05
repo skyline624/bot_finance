@@ -40,7 +40,7 @@ def get_market_news(query: str) -> str:
     # --- SOURCE 1 : FMP (La qualité Pro) ---
     try:
         # Note: Remplacez par VOTRE vraie clé API FMP (gratuite)
-        API_KEY = "VOTRE_API_KEY_ICI" 
+        API_KEY = "10x0AciAuFTfp56xoWkKTfrRJRaBXo3l" 
         
         # On mappe la requête textuelle vers des Tickers pour l'API
         tickers = "SI=F,GC=F" # Par défaut Argent et Or
