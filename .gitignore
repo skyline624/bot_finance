@@ -1,2 +1,7 @@
 /.cache
 /venv
+.env
+.claude
+*.md
+__pycache__
+*.sqlite3

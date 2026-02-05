@@ -40,7 +40,7 @@ def get_market_news(query: str) -> str:
     # --- SOURCE 1 : FMP (La qualité Pro) ---
     try:
         # Note: Remplacez par VOTRE vraie clé API FMP (gratuite)
-        API_KEY = "10x0AciAuFTfp56xoWkKTfrRJRaBXo3l" 
+        API_KEY = "" 
         
         # On mappe la requête textuelle vers des Tickers pour l'API
         tickers = "SI=F,GC=F" # Par défaut Argent et Or
@@ -211,12 +211,11 @@ if __name__ == "__main__":
     chat = user_proxy.initiate_chat(
         trader,
         message="""
-        Fais une analyse complète et comparative de ces actifs :
+        Fais une analyse complète ces actifs et donne moi un stop loss et un take profit pour chacun :
         1. OR (Gold - Ticker: GC=F)
-        2. ARGENT (Silver - Ticker: SI=F)
+        2. ARGENT (Silver - Ticker: SI=F) en sachat que je suis rentrer à 78,93 dolars
         3. PLATINE (Platinum - Ticker: PL=F)
         4. PALLADIUM (Ticker: PA=F)
-        5. DOLLAR INDEX (Ticker: DX-Y.NYB) pour le contexte forex.
         """,
         max_turns=40
     )

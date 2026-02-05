@@ -27,11 +27,15 @@ fi
 echo "Installation des dépendances..."
 source venv/bin/activate
 
-if [ -f "requirements.txt" ]; then
+# Utiliser le nouveau requirements pour l'architecture LangGraph
+if [ -f "updated_requirements.txt" ]; then
+    echo "Installation des dépendances LangGraph..."
+    pip install -r updated_requirements.txt
+elif [ -f "requirements.txt" ]; then
     pip install -r requirements.txt
 else
     echo "Fichier requirements.txt manquant, installation manuelle..."
-    pip install yfinance pandas ta langchain-community duckduckgo-search
+    pip install yfinance pandas ta langchain langchain-community langgraph
 fi
 
 # 4. Vérification d'Ollama
@@ -46,5 +50,15 @@ else
 fi
 
 echo -e "${GREEN}=== INSTALLATION TERMINÉE ===${NC}"
-echo "Pour lancer votre script, utilisez :"
-echo "./venv/bin/python analyse_argent_complete.py"
+echo ""
+echo "Nouvelle architecture LangGraph installée !"
+echo ""
+echo "Pour lancer l'analyse trading:"
+echo "  ./venv/bin/python main.py"
+echo ""
+echo "Pour lancer le chatbot RAG:"
+echo "  ./venv/bin/python cli_chatbot.py"
+echo ""
+echo "Pour configurer les variables d'environnement:"
+echo "  cp .env.example .env"
+echo "  # Éditez .env avec vos clés API"
